@@ -1,45 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>下载</title>
+    <style>
+        /* 弹窗 (background) */
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* 弹窗内容 */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* 添加动画 */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* 关闭按钮 */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
 </head>
-<style type="text/css">
-    .wxtip {
-        background: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 998;
-        display: none;
-    }
-
-    .wxtip-icon {
-        width: 52px;
-        height: 67px;
-        background: url(weixin-tip.png) no-repeat;
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-
-    .wxtip-txt {
-        margin-top: 107px;
-        color: #fff;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-</style>
-
 <body>
-
-<div class="test">
+<div>
     <div style="text-align: center">
         <img src="2.png" style="width: 30%; margin-bottom: 30px">
         <div style="width: 70%; text-align: center; margin: auto ">
@@ -48,33 +88,65 @@
         这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
         </span>
         </div>
-        <button id="myBtn">立即下载</button>
-
-    <div class="wxtip" id="JweixinTip">
-        <span class="wxtip-icon"></span>
-        <img src="1.png" width="100%">
+        <!-- 打开弹窗按钮 -->
+        <button id="myBtn">打开弹窗</button>
     </div>
+
 </div>
-<script type="text/javascript">
-    var ua = navigator.userAgent;
-    var isWeixin = !!/MicroMessenger/i.test(ua);
-    console.log('isWeixin: ', isWeixin);
-    function weixinTip(ele) {
+
+
+<!-- 弹窗 -->
+<div id="myModal" class="modal">
+
+    <!-- 弹窗内容 -->
+    <div class="modal-content">
+        <!--        <div class="modal-header">-->
+        <!--            <span class="close">&times;</span>-->
+        <!--            <h2>弹窗头部</h2>-->
+        <!--        </div>-->
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <img src="3.png" style="width: 100%">
+        </div>
+        <div>
+
+        </div>
+        <!--        <div class="modal-footer">-->
+        <!--            <h3>弹窗底部</h3>-->
+        <!--        </div>-->
+    </div>
+
+</div>
+
+<script>
+
+    window.addEventListener('load',()=>{
         var ua = navigator.userAgent;
         var isWeixin = !!/MicroMessenger/i.test(ua);
-        if (isWeixin) {
-            ele.onclick = function (e) {
-                window.event ? window.event.returnValue = false : e.preventDefault();
-                document.getElementById('JweixinTip').style.display = 'block';
-            }
-            document.getElementById('JweixinTip').onclick = function () {
-                this.style.display = 'none';
+        // 获取弹窗
+        var modal = document.getElementById('myModal');
+
+        if(isWeixin){
+            modal.style.display = "block";
+        }
+        // 打开弹窗的按钮对象
+        var btn = document.getElementById("myBtn");
+        // 获取 <span> 元素，用于关闭弹窗 that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // 点击按钮打开弹窗
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // 在用户点击其他地方时，关闭弹窗
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
-    }
-    var myBtn = document.getElementById('myBtn');//下载一
-    weixinTip(myBtn);
+    })
+
 </script>
 </body>
-
 </html>
