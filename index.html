@@ -76,67 +76,70 @@
             background-color: #5cb85c;
             color: white;
         }
+
+        #myBtn {
+            width: 270px; /* 宽度 */
+            height: 40px; /* 高度 */
+            border-width: 0px; /* 边框宽度 */
+            border-radius: 3px; /* 边框半径 */
+            background: #1E90FF; /* 背景颜色 */
+            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+            outline: none; /* 不显示轮廓线 */
+            color: white; /* 字体颜色 */
+            font-size: 17px; /* 字体大小 */
+        }
     </style>
 </head>
 <body>
-<div>
+<div style="position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);">
     <div style="text-align: center">
         <img src="2.png" style="width: 30%; margin-bottom: 30px">
-        <div style="width: 70%; text-align: center; margin: auto ">
-        <span>
+        <div style="margin-bottom: 30px">
+        <span style="font-size: 18px">
             这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
         这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
         </span>
         </div>
         <!-- 打开弹窗按钮 -->
-        <button id="myBtn">打开弹窗</button>
+        <button  id="myBtn">马上下载</button>
     </div>
-
 </div>
-
-
 <!-- 弹窗 -->
 <div id="myModal" class="modal">
-
     <!-- 弹窗内容 -->
     <div class="modal-content">
-        <!--        <div class="modal-header">-->
-        <!--            <span class="close">&times;</span>-->
-        <!--            <h2>弹窗头部</h2>-->
-        <!--        </div>-->
         <span class="close">&times;</span>
         <div class="modal-body">
             <img src="3.png" style="width: 100%">
         </div>
         <div>
-
         </div>
-        <!--        <div class="modal-footer">-->
-        <!--            <h3>弹窗底部</h3>-->
-        <!--        </div>-->
+
     </div>
-
 </div>
-
 <script>
-
     window.addEventListener('load',()=>{
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
+        console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
 
         if(isWeixin){
             modal.style.display = "block";
-        }
-        // 打开弹窗的按钮对象
-        var btn = document.getElementById("myBtn");
-        // 获取 <span> 元素，用于关闭弹窗 that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+            // 打开弹窗的按钮对象
+            var btn = document.getElementById("myBtn");
+            // 获取 <span> 元素，用于关闭弹窗 that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-        // 点击按钮打开弹窗
-        btn.onclick = function() {
-            modal.style.display = "block";
+            // 点击按钮打开弹窗
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
         }
 
         // 在用户点击其他地方时，关闭弹窗
