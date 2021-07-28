@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>下载</title>
+</head>
+<style type="text/css">
+    .wxtip {
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        display: none;
+    }
+
+    .wxtip-icon {
+        width: 52px;
+        height: 67px;
+        background: url(weixin-tip.png) no-repeat;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .wxtip-txt {
+        margin-top: 107px;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+</style>
+
+<body>
+
+<div class="test">
+    <div style="text-align: center">
+        <img src="2.png" style="width: 30%; margin-bottom: 30px">
+        <div style="width: 70%; text-align: center; margin: auto ">
+        <span>
+            这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+        这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+        </span>
+        </div>
+        <button id="myBtn">立即下载</button>
+
+    <div class="wxtip" id="JweixinTip">
+        <span class="wxtip-icon"></span>
+        <img src="1.png" width="100%">
+    </div>
+</div>
+<script type="text/javascript">
+    var ua = navigator.userAgent;
+    var isWeixin = !!/MicroMessenger/i.test(ua);
+    console.log('isWeixin: ', isWeixin);
+    function weixinTip(ele) {
+        var ua = navigator.userAgent;
+        var isWeixin = !!/MicroMessenger/i.test(ua);
+        if (isWeixin) {
+            ele.onclick = function (e) {
+                window.event ? window.event.returnValue = false : e.preventDefault();
+                document.getElementById('JweixinTip').style.display = 'block';
+            }
+            document.getElementById('JweixinTip').onclick = function () {
+                this.style.display = 'none';
+            }
+        }
+    }
+    var myBtn = document.getElementById('myBtn');//下载一
+    weixinTip(myBtn);
+</script>
+</body>
+
+</html>
