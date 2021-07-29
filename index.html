@@ -139,7 +139,7 @@
         <!--        <span class="close">&times;</span>-->
         <div class="modal-body">
             <div style="width: 70%; display: grid; align-items: center;">
-                <div style="font-size: 54px; display: flex; margin-bottom: 24px; ">
+                <div style="font-size: 54px; display: flex; margin-bottom: 24px; align-items: center">
                     1.点击右上角 <div style="font-weight: bold">"···"</div>
                 </div>
 
@@ -179,7 +179,7 @@
 
     window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
