@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=2.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>下载</title>
     <style>
@@ -12,7 +12,7 @@
             display: none; /* 默认隐藏 */
             position: fixed;
             z-index: 1;
-            padding-top: 100px;
+            /*padding-top: 100px;*/
             left: 0;
             top: 0;
             width: 100%;
@@ -24,17 +24,20 @@
 
         /* 弹窗内容 */
         .modal-content {
-            position: relative;
+            position: absolute;
             background-color: #fefefe;
             margin: auto;
             padding: 0;
+            transform: translate(-50%,-50%);
+            top:50%;
+            left:50%;
             border: 1px solid #888;
             width: 80%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
+            -webkit-animation-duration: 0.7s;
             animation-name: animatetop;
-            animation-duration: 0.4s
+            animation-duration: 0.7s
         }
 
         /* 添加动画 */
@@ -44,7 +47,8 @@
                 opacity: 0
             }
             to {
-                top: 0;
+                top: 50%;
+                transform: translate(-50%,-50%);
                 opacity: 1
             }
         }
@@ -55,7 +59,8 @@
                 opacity: 0
             }
             to {
-                top: 0;
+                top: 50%;
+                transform: translate(-50%,-50%);
                 opacity: 1
             }
         }
@@ -154,7 +159,25 @@
     </div>
 </div>
 <script>
+
+    (function() {//解决不同手机dpr不一致的适配问题(解决了1px的问题)
+        var scale = 1.0;
+        if (window.devicePixelRatio === 2) {
+            scale *= 0.5;
+        }
+        if (window.devicePixelRatio === 3) {
+            scale *= 0.333333;
+        }
+        var meta = document.createElement('meta');
+        meta.setAttribute('name', 'viewport');
+        meta.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+        document.head.appendChild(meta);
+    })();
+
     window.addEventListener('load', () => {
+
+
+
         var ua = navigator.userAgent;
         var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
