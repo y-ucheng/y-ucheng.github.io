@@ -179,7 +179,7 @@
 
     window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !/MicroMessenger/i.test(ua);
+        var isWeixin = !!/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
