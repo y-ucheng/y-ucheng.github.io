@@ -99,7 +99,7 @@
 
         #myBtn {
             width: 100%; /*宽度*/
-            height: 99px; /*高度*/
+            height: 140px; /*高度*/
             border-width: 0px; /* 边框宽度 */
             border-radius: 20px; /* 边框半径 */
             background: #1E90FF; /* 背景颜色 */
@@ -114,7 +114,7 @@
 <body>
 <div style="position: absolute;
             left: 50vw;
-            top: 30vh;
+            top: 38vh;
             transform: translate(-50%, -50%);
             width: 70%;">
     <div style="text-align: center">
@@ -177,7 +177,7 @@
 
     window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
