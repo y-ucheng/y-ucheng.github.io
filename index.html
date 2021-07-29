@@ -5,7 +5,7 @@
 <!--    <meta name="viewport"-->
 <!--          content="width=device-width, user-scalable=no, initial-scale=2.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>下载</title>
+    <title>云简签下载</title>
     <style>
         /* 弹窗 (background) */
         .modal {
@@ -98,7 +98,7 @@
         }
 
         #myBtn {
-            width: 382px; /*宽度*/
+            width: 100%; /*宽度*/
             height: 99px; /*高度*/
             border-width: 0px; /* 边框宽度 */
             border-radius: 20px; /* 边框半径 */
@@ -106,7 +106,7 @@
             cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
             outline: none; /* 不显示轮廓线 */
             color: white; /* 字体颜色 */
-            font-size: 38px; /* 字体大小 */
+            font-size: 58px; /* 字体大小 */
             margin-top: 50px; /*和上面的间距*/
         }
     </style>
@@ -120,9 +120,9 @@
     <div style="text-align: center">
         <img src="2.png" style="width: 30%; margin-bottom: 30px">
     </div>
-    <div style="text-align: center; font-size: 58px; font-weight: bold; margin: 30px 0">云简签</div>
-    <div style="margin-bottom: 30px">
-        <span style="font-size:38px;color: #5F5F64;">
+    <div style="text-align: center; font-size: 78px; font-weight: bold; margin: 30px 0">云简签</div>
+    <div style="margin-bottom: 30px; text-align: center">
+        <span style="font-size:58px;color: #5F5F64;">
             云简签主要配合u-change 在现场快速绑定无源墨水屏，商品变价等，无需在电子价签后台修改价格。
         </span>
     </div>
@@ -138,15 +138,15 @@
         <!--        <span class="close">&times;</span>-->
         <div class="modal-body">
             <div style="width: 70%; display: grid; align-items: center;">
-                <div style="font-size: 34px">
+                <div style="font-size: 54px">
                     1.点击右上角“···”
                 </div>
                 <div>
-                    <span style="width: 70vw; font-size: 34px">2.再点击“在浏览器打开”</span>
+                    <span style="width: 70vw; font-size: 54px">2.再点击“在浏览器打开”</span>
                 </div>
             </div>
             <div style="width: 30%">
-                <img src="1.png" style="width: 18vw">
+                <img src="5.svg" width="100%"/>
             </div>
         </div>
 
@@ -154,7 +154,7 @@
         </div>
         <hr style="size: 0.3px; color: #888888">
         <div id="div" onclick="close()"
-             style="text-align: center; font-size: 28px; color: #3F8CFF; margin:40px 0; font-weight: bold">
+             style="text-align: center; font-size: 58px; color: #3F8CFF; margin:40px 0; font-weight: bold">
             知道了
         </div>
     </div>
@@ -177,7 +177,7 @@
 
     window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
