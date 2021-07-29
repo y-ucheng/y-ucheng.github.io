@@ -18,8 +18,8 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         /* 弹窗内容 */
@@ -30,7 +30,7 @@
             padding: 0;
             border: 1px solid #888;
             width: 80%;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             -webkit-animation-name: animatetop;
             -webkit-animation-duration: 0.4s;
             animation-name: animatetop;
@@ -39,13 +39,25 @@
 
         /* 添加动画 */
         @-webkit-keyframes animatetop {
-            from {top:-300px; opacity:0}
-            to {top:0; opacity:1}
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
         }
 
         @keyframes animatetop {
-            from {top:-300px; opacity:0}
-            to {top:0; opacity:1}
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
         }
 
         /* 关闭按钮 */
@@ -69,7 +81,10 @@
             color: white;
         }
 
-        .modal-body {padding: 2px 16px;}
+        .modal-body {
+            padding: 68px 44px;
+            display: flex;
+        }
 
         .modal-footer {
             padding: 2px 16px;
@@ -78,60 +93,75 @@
         }
 
         #myBtn {
-            width: 270px; /* 宽度 */
-            height: 40px; /* 高度 */
+
+            width: 270rem; /* 宽度 */
+            height: 40rem; /* 高度 */
             border-width: 0px; /* 边框宽度 */
             border-radius: 3px; /* 边框半径 */
             background: #1E90FF; /* 背景颜色 */
             cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
             outline: none; /* 不显示轮廓线 */
             color: white; /* 字体颜色 */
-            font-size: 17px; /* 字体大小 */
+            font-size: 17rem; /* 字体大小 */
         }
     </style>
 </head>
 <body>
 <div style="position: absolute;
-            left: 50%;
-            top: 50%;
+            left: 50vw;
+            top: 50vh;
             transform: translate(-50%, -50%);">
     <div style="text-align: center">
         <img src="2.png" style="width: 30%; margin-bottom: 30px">
     </div>
-    <div style="margin-bottom: 30px">
-        <span style="font-size: 18px;">
-            这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
-        这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+    <div style="text-align: center; font-size: 20rem; font-weight: bold; margin-bottom: 15px">云简签</div>
+    <div style="margin-bottom: 30rem">
+        <span style="font-size: 18rem;">
+            云简签主要配合u-change 在现场快速绑定无源墨水屏，商品变价等，无需在电子价签后台修改价格。
         </span>
     </div>
-    <!-- 打开弹窗按钮 -->
-    <button  id="myBtn">马上下载</button>
+    <div style="width: 100%; text-align: center">
+        <!-- 打开弹窗按钮 -->
+        <button id="myBtn">马上下载</button>
+    </div>
 </div>
 <!-- 弹窗 -->
 <div id="myModal" class="modal">
     <!-- 弹窗内容 -->
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <!--        <span class="close">&times;</span>-->
         <div class="modal-body">
-            <img src="3.png" style="width: 100%">
+            <div style="width: 70%; display: grid; align-items: center;">
+                <div style="font-size: 28rem">
+                    1.点击右上角“···”
+                </div>
+                <div>
+                    <span style="width: 70vw; font-size: 28rem">2.再点击“在浏览器打开”</span>
+                </div>
+            </div>
+            <div style="width: 30%">
+                <img src="1.png" style="width: 18vw">
+            </div>
         </div>
+
         <div>
         </div>
-        <hr style="size: 0.3px; color: #888888">
-        <div id="div" onclick="close()" style="text-align: center; color: #5cb85c; margin:10px 0; font-weight: bold">
+        <hr style="size: 0.3rem; color: #888888">
+        <div id="div" onclick="close()"
+             style="text-align: center; font-size: 28rem; color: #3F8CFF; margin:20rem 0; font-weight: bold">
             知道了
         </div>
     </div>
 </div>
 <script>
-    window.addEventListener('load',()=>{
+    window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
 
-        if(isWeixin){
+        if (isWeixin) {
             modal.style.display = "block";
             // 打开弹窗的按钮对象
             var btn = document.getElementById("myBtn");
@@ -139,22 +169,33 @@
             var div = document.getElementsByClassName("close")[0];
 
             // 点击按钮打开弹窗
-            btn.onclick = function() {
+            btn.onclick = function () {
                 modal.style.display = "block";
             }
         }
         // 点击 <div> (x), 关闭弹窗
         var oDiv = document.getElementById("div");
-        oDiv.onclick = function(){
+        oDiv.onclick = function () {
             modal.style.display = "none";
         }
 
         // 在用户点击其他地方时，关闭弹窗
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+
+        //    rem 适配
+        function rem() {
+            let fz = window.clientWidth || document.documentElement.offsetWidth
+            document.documentElement.style.fontSize = (fz / 720) + 'px'
+        }
+
+        window.addEventListener('resize', () => {
+            rem()
+        })
+        rem()
     })
 
 </script>
