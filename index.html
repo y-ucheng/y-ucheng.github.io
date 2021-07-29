@@ -98,15 +98,16 @@
         }
 
         #myBtn {
-            width: 382px;
-            height: 66px;
+            width: 382px; /*宽度*/
+            height: 99px; /*高度*/
             border-width: 0px; /* 边框宽度 */
-            border-radius: 8px; /* 边框半径 */
+            border-radius: 20px; /* 边框半径 */
             background: #1E90FF; /* 背景颜色 */
             cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
             outline: none; /* 不显示轮廓线 */
             color: white; /* 字体颜色 */
             font-size: 38px; /* 字体大小 */
+            margin-top: 50px; /*和上面的间距*/
         }
     </style>
 </head>
@@ -153,7 +154,7 @@
         </div>
         <hr style="size: 0.3px; color: #888888">
         <div id="div" onclick="close()"
-             style="text-align: center; font-size: 28px; color: #3F8CFF; margin:20px 0; font-weight: bold">
+             style="text-align: center; font-size: 28px; color: #3F8CFF; margin:40px 0; font-weight: bold">
             知道了
         </div>
     </div>
@@ -176,7 +177,7 @@
 
     window.addEventListener('load', () => {
         var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isWeixin = !/MicroMessenger/i.test(ua);
         console.log(isWeixin);
         // 获取弹窗
         var modal = document.getElementById('myModal');
