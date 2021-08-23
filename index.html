@@ -1,230 +1,66 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-<!--    <meta name="viewport"-->
-<!--          content="width=device-width, user-scalable=no, initial-scale=2.0, maximum-scale=1.0, minimum-scale=1.0">-->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>云简签下载</title>
-    <style>
-        /* 弹窗 (background) */
-        .modal {
-            display: none; /* 默认隐藏 */
-            position: fixed;
-            z-index: 1;
-            /*padding-top: 100px;*/
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=1, minimum-scale=0.6, user-scalable=0">
+<meta name="description" content="Wear your earphone">
+<title>Happy Valentine's Day</title>
 
-        /* 弹窗内容 */
-        .modal-content {
-            position: absolute;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 0;
-            transform: translate(-50%,-50%);
-            top:50%;
-            left:50%;
-            border: 1px solid #888;
-            width: 80%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.7s;
-            animation-name: animatetop;
-            animation-duration: 0.7s;
-            border-radius: 17px;
-        }
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<link rel="stylesheet" href="stylesheets/style.css" />
 
-        /* 添加动画 */
-        @-webkit-keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
-            to {
-                top: 50%;
-                transform: translate(-50%,-50%);
-                opacity: 1
-            }
-        }
+<script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/sakura.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/modernizr.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/typed.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bgm.js" type="text/javascript" charset="utf-8"></script>
 
-        @keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
-            to {
-                top: 50%;
-                transform: translate(-50%,-50%);
-                opacity: 1
-            }
-        }
-
-        /* 关闭按钮 */
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-header {
-            padding: 2px 16px;
-            background-color: #5cb85c;
-            color: white;
-        }
-
-        .modal-body {
-            padding: 68px 44px;
-            display: flex;
-        }
-
-        .modal-footer {
-            padding: 2px 16px;
-            background-color: #5cb85c;
-            color: white;
-        }
-
-        #myBtn {
-            width: 100%; /*宽度*/
-            height: 140px; /*高度*/
-            border-width: 0px; /* 边框宽度 */
-            border-radius: 20px; /* 边框半径 */
-            background: #1E90FF; /* 背景颜色 */
-            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
-            outline: none; /* 不显示轮廓线 */
-            color: white; /* 字体颜色 */
-            font-size: 58px; /* 字体大小 */
-            margin-top: 50px; /*和上面的间距*/
-        }
-    </style>
 </head>
+
 <body>
-<div style="position: absolute;
-            left: 50vw;
-            top: 38vh;
-            transform: translate(-50%, -50%);
-            width: 90%;">
-    <div style="text-align: center">
-        <img src="2.png" style="width: 30%; margin-bottom: 30px">
-    </div>
-    <div style="text-align: center; font-size: 78px; font-weight: bold; margin: 30px 0 50px 0;color: #3E3C4D">云简签</div>
-    <div style="margin-bottom: 30px;">
-        <span style="font-size:54px;color: #5F5F64;">
-            云简签主要配合u-change 在现场快速绑定无源墨水屏，商品变价等，无需在电子价签后台修改价格。
-        </span>
-    </div>
-    <div style="width: 100%; text-align: center">
-        <!-- 打开弹窗按钮 -->
-        <button id="myBtn">立即下载</button>
-    </div>
-</div>
-<!-- 弹窗 -->
-<div id="myModal" class="modal">
-    <!-- 弹窗内容 -->
-    <div class="modal-content">
-        <!--        <span class="close">&times;</span>-->
-        <div class="modal-body">
-            <div style="width: 70%; display: grid; align-items: center;">
-                <div style="font-size: 54px; display: flex; margin-bottom: 24px; align-items: center">
-                    1.点击右上角 <div style="display: flex;font-weight: bold; align-items: center">"···"</div>
-                </div>
 
-                <div>
-                    <span style="width: 70vw; font-size: 54px">2.再点击"在浏览器打开"</span>
-                </div>
-            </div>
-            <div style="width: 30%">
-                <img src="5.svg" width="100%" height="100%"/>
-            </div>
-        </div>
+	<div id="jsi-cherry-container"></div>
 
-        <div>
-        </div>
-        <hr style="size: 0.3px; color: #888888">
-        <div id="div" onclick="close()"
-             style="text-align: center; font-size: 48px; color: #3F8CFF; margin:40px 0;">
-            知道了
-        </div>
-    </div>
-</div>
-<script>
+	<section class="container" id="contact" >
+		<form class="flip">
+			<div class="front">
+            <h2>To&nbsp;&nbsp;傻狗郑剑龙</h2>
+				<a id="flip2back" href="#">Flip</a>
+			</div>
+			<div id="content" class="back">
+				<div id="letter">
+					<div class="container">
+						<div class="flip">                        
+                        	<div class="front"></div>
+			  				<div class="back">
+                            	<p class="letter"></p> 
+                                <a id="close" href="#">Close</a>								
+							</div>                            
+						</div>
+					</div>
+				</div>
+				<div id="top">
+					<a id="flip" href="#contact">Flip</a>
+				</div>
+				<div id="lid" class="container">
+  					<div class="flip">  
+  						<div class="front">
+							<a id="open" href="#content"><span></span></a>
+						</div>                        
+						<div class="back"></div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
 
-    // (function() {//解决不同手机dpr不一致的适配问题(解决了1px的问题)
-    //     var scale = 1.0;
-    //     if (window.devicePixelRatio === 2) {
-    //         scale *= 0.5;
-    //     }
-    //     if (window.devicePixelRatio === 3) {
-    //         scale *= 0.333333;
-    //     }
-    //     var meta = document.createElement('meta');
-    //     meta.setAttribute('name', 'viewport');
-    //     meta.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
-    //     document.head.appendChild(meta);
-    // })();
-
-    window.addEventListener('load', () => {
-        var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
-        console.log(isWeixin);
-        // 获取弹窗
-        var modal = document.getElementById('myModal');
-        // 打开弹窗的按钮对象
-        var btn = document.getElementById("myBtn");
-        if (isWeixin) {
-            modal.style.display = "block";
-            // 获取 <div> 元素，用于关闭弹窗 that closes the modal
-            var div = document.getElementsByClassName("close")[0];
-
-            // 点击按钮打开弹窗
-            btn.onclick = function () {
-                modal.style.display = "block";
-            }
-        } else {
-            btn.onclick = function () {
-                window.location.href = "http://qiniu.sifei.info/YifeiCloudTag.apk";
-            }
-            window.location.href = "http://qiniu.sifei.info/YifeiCloudTag.apk";
-        }
-        // 点击 <div> (知道了), 关闭弹窗
-        var oDiv = document.getElementById("div");
-        oDiv.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // 在用户点击其他地方时，关闭弹窗
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        //    px 适配
-        function px() {
-            let fz = window.clientWidth || document.documentElement.offsetWidth
-            document.documentElement.style.fontSize = (fz / 720) + 'px'
-        }
-
-        window.addEventListener('resize', () => {
-            px()
-        })
-        px()
-    })
-
-</script>
+	<div id="footer">
+		<audio id="music2" preload="auto" loop></audio>
+		<a id="music_btn2" href="javascript:playPause();"></a>
+	</div>
+    
 </body>
+<script src="js/letter.js" type="text/javascript" charset="utf-8"></script>
 </html>
+
