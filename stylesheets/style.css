@@ -40,6 +40,7 @@
 
 body {
 	opacity: 0;
+  margin-top: 75%;
 }
 
 span {
@@ -330,7 +331,7 @@ section.container > form.flip > .front {
 #letter {
   background: #fafafa;
   width: 90%;
-  height: 95%;
+  height: 110%;
   position: absolute;
   left: 5%;
   top: 5%;
@@ -341,7 +342,7 @@ section.container > form.flip > .front {
   transition: 0s 0s; }
 
 #content:target #letter {
-  top: -40%;
+  top: -73%;
   -o-transition: .5s .5s;
   transition: .5s .5s; }
 

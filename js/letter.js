@@ -6,8 +6,8 @@ $("#open").click(function(){
 	if(!aparted)
 	{
 		var typed = new Typed('.letter', {
-			strings: ["^1000Dear&nbsp;&nbsp;郑剑龙", 
-				"傻狗郑剑龙<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整天闲着没事干一直叫我写这b玩意<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真的是烦死 跟鬼一样<br><br><p style='float:right; display:block; width:80px;'>你爸爸</p>"],
+			strings: ["^1000Dear&nbsp;&nbsp;...", 
+				"微风燥热 空气清新 树林寂静 今夜我喜欢你 不止今夜<br>很遗憾没能亲口对你说出来 但或许这也是一种方式 <br>这个夏天很高兴遇见你 或许是个开始 又或许是限定<br><br>如果可以 春天的清晨 夏天的海滩 秋天的黄昏 冬日的夜晚 星星与月亮 大海和天空 还有你 <br><br>我喜欢你 笨拙而热烈 一无所有却又倾尽所有<br>我一直搞不清楚<br>喜是何感<br>欢为何物<br>你是答案<br>很幸运 爱慕未停 并不晚<br>"],
 			typeSpeed: 100,
 			backSpeed: 50
 		});
