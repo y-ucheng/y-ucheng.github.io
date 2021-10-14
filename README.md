@@ -5,6 +5,8 @@
 English | [简体中文](./README-zh_CN.md)
  
 <a href="https://github.com/VickScarlet/lifeRestart">原作链接（支持原作）</a>
+本人只是小白，学习一些新知识本项目克隆了其他人的项目，如有侵权请联系删除！QQ：1171623560
+本项目也可以访问<a href="https://y-ucheng.github.io/view/">https://y-ucheng.github.io/view/</a>此地址进行游戏
 ## Introduction
 
 - Game Life Restart
