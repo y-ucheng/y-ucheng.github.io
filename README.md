@@ -1,9 +1,10 @@
 # Life Restart
-支持原作 <a href="https://github.com/VickScarlet/lifeRestart">
+
 <a href="https://discord.gg/U3qrf49NMQ"><img src="https://img.shields.io/discord/883382868427014255?color=%23FEE75C&label=Discord&logo=discord&logoColor=white&style=for-the-badge" /></a>
 
 English | [简体中文](./README-zh_CN.md)
-
+支持原作 
+<a href="https://github.com/VickScarlet/lifeRestart">
 ## Introduction
 
 - Game Life Restart
