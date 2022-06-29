@@ -1,4 +1,6 @@
 # Life Restart
+# 这是我为了学习github的使用而在别人的github仓库里面克隆下来的项目，支持原作者人人有责，如果这一份有侵权，请联系删除
+<a target="_blank" href="https://github.com/VickScarlet/lifeRestart">这是他们的gitHub项目地址，点击跳转</a>
 
 <a href="https://discord.gg/U3qrf49NMQ"><img src="https://img.shields.io/discord/883382868427014255?color=%23FEE75C&label=Discord&logo=discord&logoColor=white&style=for-the-badge" /></a>
 

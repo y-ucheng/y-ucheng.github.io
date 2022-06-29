@@ -1,5 +1,8 @@
 # Life Restart
 
+# This is a project that I cloned from someone else's GitHub repository in order to learn how to use GitHub. Everyone is responsible for supporting the original author. If this copy is infringing, please contact us to delete it.
+<a target="_blank" href="https://github.com/VickScarlet/lifeRestart">This is they GitHub warehouse address https://github.com/VickScarlet/lifeRestart</a>
+
 <a href="https://discord.gg/U3qrf49NMQ"><img src="https://img.shields.io/discord/883382868427014255?color=%23FEE75C&label=Discord&logo=discord&logoColor=white&style=for-the-badge" /></a>
 
 English | [简体中文](./README-zh_CN.md)
